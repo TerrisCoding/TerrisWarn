@@ -1,0 +1,31 @@
+== TerrisWarn ==
+''A warning plugin for Bukkit.''
+''Created for the Terris Minecraft Community at http://terrismc.info''
+Copyright &copy; 2012 Terris Coding Team
+----
+
+
+=== Features ===
+
+
+=== To Do ===
+#warn player
+##player name smart search
+#freeze when warned
+#acknowledgment to be unfrozen
+#keep track of date, time, players, description for warns
+#check warnings
+#remove a warning
+#freeze a player
+
+
+=== Bugs ===
+
+
+=== Changelog ===
+December 10, 2011
+0.1 - Plugin created
+
+
+====== README last updated on Feburary 27, 2012. ======
+====== README uses the [http://www.mediawiki.org/wiki/Help:Formatting MediaWiki markup standard]. ======

@@ -1,0 +1,24 @@
+name: TerrisWarn
+version: 0.0.0
+description: Manages player warnings
+authors: [inspireVeiN, krisdestruction, dungeonmaster372] 
+website: http://terrismc.info
+main: info.terrismc.TerrisWarn
+database: false
+depend: []
+commands:
+  warn:
+    description: warn a player
+    permission: terriswarn.warn
+    usage: |
+      /<command> <player> <reason> [description]
+      /<command> <player> <type>
+
+permissions:
+  terriswarn.*:
+    description: Gives access to all TerrisWarn commands
+    children:
+      terriswarn.warn: true
+  terris.warn:
+    description: Allows you to warn a player
+    default: op
