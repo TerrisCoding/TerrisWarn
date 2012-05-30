@@ -1,9 +1,9 @@
 name: TerrisWarn
-version: 0.0.0
+version: ${pom.version}-${git.commit.id.abbrev}
 description: Manages player warnings
-authors: [inspireVeiN, krisdestruction, dungeonmaster372] 
+authors: [inspireVeiN, krisdestruction, dungeonmaster372, Spice_King] 
 website: http://terrismc.info
-main: info.terrismc.TerrisWarn
+main: info.terrismc.plugins.TerrisWarn.TerrisWarn
 database: false
 depend: []
 commands:

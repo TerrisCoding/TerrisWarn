@@ -1,0 +1,107 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>info.terrismc.plugins</groupId>
+    <artifactId>TerrisWarn</artifactId>
+    <version>dev-SNAPSHOT</version>
+    <name>TerrisWarn</name>
+    
+    <organization>
+        <name>Terris</name>
+        <url>http://terrismc.info</url>
+    </organization>
+    
+    <inceptionYear>2011</inceptionYear>
+    
+    <licenses>
+        <license>
+            <name>GNU General Public License Version 3</name>
+            <url>http://www.gnu.org/copyleft/gpl.html</url>
+            <distribution>repo</distribution>
+            <comments>A copyleft license.</comments>
+        </license>
+    </licenses>
+    
+    <!--Not needed at this time-->
+    
+    <!--
+    <distributionManagement>
+        <repository>
+            <id>repo</id>
+            <url>file:${project.basedir}/../mavenrepository/releases</url>
+        </repository>
+        <snapshotRepository>
+            <id>snapshot-repo</id>
+            <url>file:${project.basedir}/../mavenrepository/snapshots</url>
+        </snapshotRepository>
+    </distributionManagement>
+    -->
+    
+    <scm>
+        <connection>scm:git:https://github.com/TerrisCoding/TerrisWarn.git</connection>
+        <developerConnection>scm:git:git@github.com:TerrisCoding/TerrisWarn.git</developerConnection>
+    </scm>
+    
+    <repositories>
+        <repository>
+            <id>bukkit-repo</id>
+            <url>http://repo.bukkit.org/content/groups/public</url>
+        </repository>
+    </repositories>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>pl.project13.maven</groupId>
+                <artifactId>git-commit-id-plugin</artifactId>
+                <version>2.0.3</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>revision</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <prefix>git</prefix>
+                    <dateFormat>E MMM dd yyyy zz GGG '@' HH:mm:ss</dateFormat>
+                    <verbose>true</verbose>
+                    <dotGitDirectory>${project.basedir}/.git</dotGitDirectory>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-release-plugin</artifactId>
+                <version>2.2.2</version>
+                <configuration>
+                    <goal>deploy</goal>
+                    <workingDirectory>${project.basedir}/temp</workingDirectory>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>default</id>
+                        <goals>
+                            <goal>perform</goal>
+                        </goals>
+                        <configuration>
+                            <pomFileName>pom.xml</pomFileName>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+    </build>
+    <dependencies>
+        <dependency>
+            <groupId>org.bukkit</groupId>
+            <artifactId>bukkit</artifactId>
+            <version>1.2.5-R3.0</version>
+            <type>jar</type>
+            <scope>compile</scope>
+        </dependency>
+    </dependencies>
+</project>
